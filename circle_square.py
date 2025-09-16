@@ -11,7 +11,7 @@ character = load_image('character.png')
 
 x = 400
 y = 90
-angle = 90
+angle = 450
 
 while(True):
     character.draw_now(x,y)
@@ -32,10 +32,10 @@ while(True):
             y = y - 2
             delay(0.01)
     else:
-        if(angle >= 450):
+        if(angle <= 90):
             sq = True
             x,y = 400,90
-            angle = 90
+            angle = 450
         else:
             cx = 405
             cy = 325
@@ -43,6 +43,6 @@ while(True):
             radian = math.radians(angle)
             x = cx + r * math.cos(radian)
             y = cy + r * math.sin(radian)
-            angle = angle + 5
+            angle = angle - 5
             delay(0.05)
     clear_canvas_now()
